@@ -1,5 +1,7 @@
-<h1 style="text-align: center;">Create a New Portfolio Item</h1>
+<h1 style="text-align: center;">Edit Portfolio Item</h1>
 
+<!-- form will be here -->
+<div class="container">
 <%= form_with(model: @portfolio_item, local: true) do |form| %>
   <% if @portfolio_item.errors.any? %>
     <div id="error_explanation">
@@ -13,10 +15,9 @@
     </div>
   <% end %>
   
-<div class="container">
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, placeholder: "#{@portfolio_item.title}" %>
   </div>
 
   <div class="field">
@@ -26,7 +27,7 @@
 	
 	<div class="field">
     <%= form.label :body %>
-    <%= form.text_field :body %>
+    <%= form.text_area :body, :class=>"materialize-textarea"  %>
   </div>
 	
 	<div class="field">
@@ -39,7 +40,8 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Edit Portfolio Item", :class => 
+    'waves-effect waves-light btn', :style =>'background-color: #63C174; font-color: white;' %>
   </div>
 <% end %>
 </div>
