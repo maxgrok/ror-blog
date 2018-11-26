@@ -1,2 +1,43 @@
-<h1>Home Page</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!-- Recent Tweets Feature to be Implemented
+ <div class="col s3 right">
+	<h2 style="color:#222222;text-decoration: underline;">Recent Tweets</h2>
+	<p>tweets
+	
+
+	</p>
+</div> -->
+<div class="container">
+	<h2 style="text-align: center;">Home</h2>
+<div class="row">
+	<div class="col s6">
+		<h2 style="color:#222222;text-decoration: underline;">Recent Blog Posts</h2>
+		<p><% @posts.each do |post| %>
+			<%= link_to post.title, blogs_path(params[post.id]), style:"color:#404040;" %></br>
+			<em style="color:#A1A1A1;">
+			<%= Time.at(post.created_at.to_i).to_formatted_s(:rfc822) %></em><br>
+			<hr>
+			<% end %>
+		</p>
+	</div>
+
+	<div class="col s6">
+		<h2 style="color:#222222; text-decoration: underline; text-align:right;">Recent Talks</h2>
+	</div>
+</div>
+<div class="row">
+	<div class="col s6">
+		<h2 style="color:#222222;text-decoration: underline;">Recent Companies</h2>
+		<p><% @posts.each do |post| %>
+			<%= link_to post.title, blogs_path(post), style:"color:#404040;" %></br>
+			<em style="color:#A1A1A1;">
+			<%= Time.at(post.created_at.to_i).to_formatted_s(:rfc822) %></em><br>
+			<hr>
+			<% end %>
+		</p>
+	</div>
+
+	<div class="col s6">
+		<h2 style="color:#222222; text-decoration: underline; text-align:right;">Recent Press</h2>
+	</div>
+</div>
+</div>

@@ -1,15 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DevcampPortfolio</title>
+    <title>Max Goodman Portfolio</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+         
   </head>
 
   <body>
+    <nav class="navbar">
+      <div class="container">
+        <ul>
+            <li style="margin-left: -12.5em; margin-right: 2em;"> <img src="../assets/max.jpg" class="circle responsive-img" style="height:3em; width:3em; margin-top:.5em;"/>
+            </li>
+        <li style="margin-left: -8em;margin-right: 2em;font-weight:500; font-weight: bold; color: #404040;">Max Goodman </li>
+        <li><%= link_to "Home", pages_home_path %></li>
+         <li><%= link_to "Blogs", blogs_path %></li>
+         <li><%= link_to "Talks", pages_talks_path %></li>
+         <li><%= link_to "Companies", pages_companies_path %></li>
+         <li><%= link_to "Press", pages_press_path %></li>
+        <li><%= link_to "About", pages_about_path %></li>
+        <li><%= link_to "Contact", pages_contact_path %></li>
+      </ul>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
