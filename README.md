@@ -1,24 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Blog built with Ruby on Rails. 
 
-Things you may want to cover:
+* Ruby version = 2.5.3
+* Rails version = 5.2.1
 
-* Ruby version
+* Configuration 
 
-* System dependencies
-
-* Configuration
+add `.gitignore` files = config/master.key and config/credentials.yml.enc
 
 * Database creation
+  `rails db:create`
 
 * Database initialization
+  Make sure to be running Postgresql, otherwise app will not work. 
 
-* How to run the test suite
+* Local Deployment
 
-* Services (job queues, cache servers, search engines, etc.)
+`rails s` 
 
-* Deployment instructions
+## License 
 
-* ...
+MIT License 2018.
+
+## Contributions 
+
+Submit 'pull' requests. 
