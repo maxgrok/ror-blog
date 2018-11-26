@@ -26,6 +26,25 @@
 </div>
 <div class="row">
 	<div class="col s6">
+		<h2 style="color:#222222;text-decoration: underline;">Skills</h2>
+		<p><% @skills.each do |skill| %>
+			<label style="color: #404040;"><%=  skill.title %></label></br>
+			<label style="color: #404040;"><%= skill.percent_utilized %></label></br>
+			
+			<em style="color:#A1A1A1;">
+			<%= Time.at(skill.created_at.to_i).to_formatted_s(:rfc822) %></em><br>
+			<hr>
+			<% end %>
+		</p>
+	</div>
+
+	<div class="col s6">
+		<h2 style="color:#222222; text-decoration: underline; text-align:right;">Recent Press</h2>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col s6">
 		<h2 style="color:#222222;text-decoration: underline;">Recent Companies</h2>
 		<p><% @posts.each do |post| %>
 			<%= link_to post.title, blogs_path(post), style:"color:#404040;" %></br>
